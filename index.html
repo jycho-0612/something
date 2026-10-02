@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Something for you 🌷</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playball&family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- crumpled paper background -->
+  <svg class="paper" aria-hidden="true"><filter id="crumple"><feTurbulence type="fractalNoise" baseFrequency=".008 .016" numOctaves="4" seed="7"/><feDiffuseLighting lighting-color="#fff" surfaceScale="2.4"><feDistantLight azimuth="50" elevation="58"/></feDiffuseLighting></filter><rect width="100%" height="100%" filter="url(#crumple)"/></svg>
+
+  <!-- 0. Password -->
+  <main id="lock" class="screen active">
+    <h1 class="script">Please enter password</h1>
+    <p class="small">HINT: YOUR FAVORITE WORD 7 WORDS, STARTS WITH "JEJE"</p>
+    <input id="pass" type="password" placeholder="Type the password…" autocomplete="off">
+    <button id="unlockBtn" class="pill">Unlock</button>
+    <p id="error" class="error" role="alert"></p>
+  </main>
+
+  <!-- 1. Hey! -->
+  <main id="hello" class="screen">
+    <svg class="art" viewBox="0 0 200 210" aria-label="A cute cat with flowers">
+      <circle cx="58" cy="72" r="38" fill="#f8b4c0"/><circle cx="100" cy="52" r="42" fill="#f8b4c0"/><circle cx="145" cy="72" r="38" fill="#f8b4c0"/><circle cx="100" cy="98" r="50" fill="#f8b4c0"/>
+      <g id="catFlowers"></g>
+      <ellipse cx="100" cy="170" rx="52" ry="38" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <ellipse cx="80" cy="196" rx="13" ry="8" fill="#fff" stroke="#ead3d6" stroke-width="3"/><ellipse cx="120" cy="196" rx="13" ry="8" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <path d="M50 104 L56 56 L90 82Z" fill="#fff" stroke="#ead3d6" stroke-width="3" stroke-linejoin="round"/><path d="M150 104 L144 56 L110 82Z" fill="#fff" stroke="#ead3d6" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M58 76 L60 62 L76 74Z" fill="#f3d7c0"/><path d="M142 76 L140 62 L124 74Z" fill="#f3d7c0"/>
+      <ellipse cx="100" cy="112" rx="58" ry="46" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <circle cx="78" cy="112" r="6" fill="#2b2024"/><circle cx="122" cy="112" r="6" fill="#2b2024"/><circle cx="80" cy="110" r="2" fill="#fff"/><circle cx="124" cy="110" r="2" fill="#fff"/>
+      <ellipse cx="62" cy="128" rx="12" ry="8" fill="#ff9fb0" opacity=".85"/><ellipse cx="138" cy="128" rx="12" ry="8" fill="#ff9fb0" opacity=".85"/>
+      <ellipse cx="100" cy="121" rx="3.5" ry="2.5" fill="#e88a9a"/>
+      <path d="M92 129 Q96 136 100 129 Q104 136 108 129" fill="none" stroke="#2b2024" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <h1 class="title">HEY SHANE!</h1>
+    <p class="small">WOULD YOU LIKE TO SEE YOUR GIFT?</p>
+    <div class="row">
+      <button class="round" id="declineBtn" aria-label="No"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg></button>
+      <button class="round" id="acceptBtn" aria-label="Yes"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </main>
+
+  <!-- 2. Declined -->
+  <main id="decline" class="screen">
+    <div class="swap">
+    <svg class="art poseA" viewBox="0 0 200 150" aria-label="A sad cat sitting">
+      <path d="M136 128 Q174 126 170 98" fill="none" stroke="#ead3d6" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="100" cy="118" rx="36" ry="30" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <ellipse cx="76" cy="140" rx="13" ry="8" fill="#fff" stroke="#ead3d6" stroke-width="3"/><ellipse cx="124" cy="140" rx="13" ry="8" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <path d="M52 50 L50 12 L84 32Z" fill="#fff" stroke="#ead3d6" stroke-width="3" stroke-linejoin="round"/><path d="M148 50 L150 12 L116 32Z" fill="#fff" stroke="#ead3d6" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M52 38 L51 22 L66 31Z" fill="#f3d7c0"/><path d="M148 38 L149 22 L134 31Z" fill="#f3d7c0"/>
+      <ellipse cx="100" cy="62" rx="54" ry="42" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <path d="M68 68 Q77 60 86 68 M114 68 Q123 60 132 68" fill="none" stroke="#2b2024" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="62" cy="80" rx="12" ry="7" fill="#ff9fb0" opacity=".85"/><ellipse cx="138" cy="80" rx="12" ry="7" fill="#ff9fb0" opacity=".85"/>
+      <ellipse cx="100" cy="76" rx="3.5" ry="2.5" fill="#e88a9a"/>
+      <path d="M93 86 Q100 79 107 86" fill="none" stroke="#2b2024" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <svg class="art poseB" viewBox="0 0 200 150" aria-label="A sad cat">
+      <ellipse cx="100" cy="112" rx="72" ry="30" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <ellipse cx="80" cy="130" rx="14" ry="8" fill="#fff" stroke="#ead3d6" stroke-width="3"/><ellipse cx="120" cy="130" rx="14" ry="8" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <path d="M48 72 L40 36 L80 54Z" fill="#fff" stroke="#ead3d6" stroke-width="3" stroke-linejoin="round"/><path d="M152 72 L160 36 L120 54Z" fill="#fff" stroke="#ead3d6" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M46 62 L45 46 L62 55Z" fill="#f3d7c0"/><path d="M154 62 L155 46 L138 55Z" fill="#f3d7c0"/>
+      <ellipse cx="100" cy="86" rx="56" ry="42" fill="#fff" stroke="#ead3d6" stroke-width="3"/>
+      <path d="M68 88 Q77 80 86 88 M114 88 Q123 80 132 88" fill="none" stroke="#2b2024" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="62" cy="102" rx="12" ry="7" fill="#ff9fb0" opacity=".85"/><ellipse cx="138" cy="102" rx="12" ry="7" fill="#ff9fb0" opacity=".85"/>
+      <ellipse cx="100" cy="97" rx="3.5" ry="2.5" fill="#e88a9a"/>
+      <path d="M93 107 Q100 100 107 107" fill="none" stroke="#2b2024" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    </div>
+    <h1 class="title">AW PLEASE?</h1>
+    <p class="small">I PREPARED THIS GIFT FOR YOU</p>
+    <button class="round" id="backHello" aria-label="Back"><svg viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </main>
+
+  <!-- 3. Flowers -->
+  <main id="flowers" class="screen">
+    <h1 class="script">Flowers for you</h1>
+    <p class="small">CLICK THE LETTER FOR A SURPRISE</p>
+    <svg class="vase" viewBox="0 0 260 400" aria-label="Roses in a red vase">
+      <g class="grow" style="--d:1.4s">
+        <path d="M130 245 L130 126" stroke="#5c9a62" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="108" cy="190" rx="22" ry="8" fill="#7fb06f" transform="rotate(-32 108 190)"/><ellipse cx="152" cy="212" rx="20" ry="7" fill="#5c9a62" transform="rotate(30 152 212)"/>
+        <g id="rose1"></g>
+      </g>
+      <g class="grow" style="--d:2.6s">
+        <path d="M128 245 Q98 210 82 166 M132 245 Q162 210 180 166" stroke="#5c9a62" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="104" cy="226" rx="26" ry="8" fill="#7fb06f" transform="rotate(-34 104 226)"/><ellipse cx="158" cy="226" rx="26" ry="8" fill="#5c9a62" transform="rotate(34 158 226)"/>
+        <g id="rose2"></g>
+      </g>
+      <g class="fade" style="--d:.3s">
+        <path d="M104 236 Q130 226 156 236 Q162 244 152 252 C212 274 220 346 194 378 Q130 394 66 378 C40 346 48 274 108 252 Q98 244 104 236Z" fill="#c4001a"/>
+      </g>
+      <g class="fade" style="--d:3.6s" font-family="Playfair Display, serif" font-weight="900" font-size="15" fill="#fff" text-anchor="middle">
+        <text x="118" y="312">THIS IS</text><text x="118" y="332">FOR YOU,</text><text x="118" y="352">SHANE</text>
+      </g>
+      <g class="env-anim" style="--d:4.4s">
+        <g id="envelope" transform="translate(204 366) rotate(14)" tabindex="0" role="button" aria-label="Open the letter" style="cursor:pointer">
+          <rect x="-36" y="-24" width="72" height="48" rx="4" fill="#f8d9dd" stroke="#e3a7b0" stroke-width="2"/>
+          <path d="M-36 -24 L0 6 L36 -24" fill="#f0bcc5" stroke="#e3a7b0" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="0" cy="6" r="9" fill="#d4283c"/><circle cx="-3" cy="3" r="3" fill="#ee6070"/>
+        </g>
+      </g>
+    </svg>
+  </main>
+
+  <!-- 4. Letter -->
+  <main id="letter" class="screen top">
+    <h1 class="script">Dear Shane,</h1>
+    <article class="letter-body">
+      <!-- ✏️ EDIT YOUR LETTER HERE. Each <p> is one paragraph. -->
+      <p>JYCHO POGI</p>
+      <p class="sign"><em>With all my heart,</em><br><strong>Jycho Jihad</strong></p>
+    </article>
+    <button class="round" id="backFlowers" aria-label="Back to the flowers"><svg viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

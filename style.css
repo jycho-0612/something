@@ -1,0 +1,53 @@
+:root { --red: #d8394a; --deep: #a4263a; --paper: #f6f3ee; }
+* { box-sizing: border-box; margin: 0; }
+body { font-family: 'Outfit', system-ui, sans-serif; color: var(--deep); background: var(--paper); }
+
+/* crumpled paper */
+.paper { position: fixed; inset: 0; width: 100%; height: 100%; opacity: .5; mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+
+.screen { display: none; position: relative; z-index: 1; min-height: 100vh; padding: 28px 20px 48px; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+.screen.active { display: flex; animation: fadeIn .9s ease both; }
+.screen.top { justify-content: flex-start; }
+
+.title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2rem, 9vw, 2.8rem); letter-spacing: .02em; color: var(--deep); }
+.script { font-family: 'Playball', cursive; font-weight: 400; font-size: clamp(2.4rem, 10vw, 3.4rem); color: var(--deep); line-height: 1.15; }
+.small { font-family: 'Playfair Display', serif; font-size: .7rem; letter-spacing: .05em; color: var(--deep); opacity: .85; }
+
+.art { width: min(240px, 62vw); }
+.vase { width: min(300px, 80vw); }
+.row { display: flex; gap: 22px; margin-top: 6px; }
+
+/* round red buttons */
+.round { width: 62px; height: 62px; border-radius: 50%; border: 0; cursor: pointer; background: var(--red); box-shadow: inset 0 0 0 3px #b92d3d, 0 0 0 3px #f3c3c8; display: grid; place-items: center; }
+.round svg { width: 28px; height: 28px; }
+.round:hover, .pill:hover { filter: brightness(1.1); }
+.round:focus-visible, .pill:focus-visible, input:focus-visible, #envelope:focus-visible { outline: 3px solid var(--deep); outline-offset: 3px; }
+
+/* password */
+#lock input { width: min(320px, 100%); font: inherit; text-align: center; padding: 12px 16px; border: 2px solid #e3a7b0; border-radius: 999px; background: #fffaf7; color: var(--deep); }
+.pill { font: inherit; font-weight: 700; color: #fff; background: var(--red); border: 0; border-radius: 999px; padding: 12px 34px; cursor: pointer; }
+.error { min-height: 1.4em; font-weight: 700; }
+
+/* letter */
+.letter-body { width: min(560px, 100%); text-align: left; font-size: .98rem; font-weight: 400; line-height: 1.8; }
+.letter-body p { margin-bottom: 1.1em; }
+.letter-body .sign { text-align: right; }
+
+/* ---- motion, like the video ---- */
+@keyframes fadeIn { from { opacity: 0; } }
+@keyframes blurIn { from { opacity: 0; filter: blur(8px); } }
+@keyframes growUp { from { opacity: 0; transform: scale(.82) translateY(14px); } }
+@keyframes bob { 50% { transform: translateY(-5px); } }
+@keyframes poseA { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes poseB { 0%, 49% { opacity: 0; } 50%, 100% { opacity: 1; } }
+
+.fade { animation: fadeIn 1.2s var(--d, 0s) ease both; }
+.grow { transform-origin: 130px 245px; animation: growUp 1.6s var(--d, 0s) ease-out both; }
+.env-anim { animation: fadeIn 1.2s var(--d) ease both, bob 3.4s calc(var(--d) + 1.2s) ease-in-out infinite; }
+#hello .art { animation: bob 3.6s ease-in-out infinite; }
+.swap { display: grid; justify-items: center; }
+.swap .art { grid-area: 1 / 1; }
+.poseA { animation: poseA 2.8s linear infinite; }
+.poseB { animation: poseB 2.8s linear infinite; }
+#letter .script { animation: blurIn 1.6s ease both; }
+.letter-body p { animation: fadeIn 1.4s calc(1.2s + var(--i, 0) * 1s) ease both; }

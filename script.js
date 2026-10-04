@@ -1,4 +1,4 @@
-const PASSWORD = 'jejemon'; // not case-sensitive
+const PASSWORD = '6022';
 const $ = (id) => document.getElementById(id);
 
 /* ---------- screens ---------- */
